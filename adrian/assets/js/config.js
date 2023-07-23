@@ -1,5 +1,5 @@
 const config = {
-      url: 'https://me.xatgif.com/api/me/adrian',
+      url: 'https://xatme.com/api/me/adrian',
       xat: '#',
       color: '#ffd700'
 }
