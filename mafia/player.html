@@ -1,1 +1,87 @@
-
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script>
+		function wyswietl(url, title, w, h) {
+		var left = (screen.width/2)-(w/2);
+		var top = (screen.height/2)-(h/2);
+		return window.open(url, title, 'scrollbars=yes, toolbar=no, menubar=no, location=no, personalbar=no, resizable=no, directories=no, status=no, width='+w+', height='+h+', top='+top+', left='+left).focus();
+	}
+	</script>
+	<link rel="stylesheet" href="css/styles.min.css">
+	<script src="js/mediaelement.min.js"></script>
+    <link href="css/mediaelementplayer.min.css" rel="stylesheet">
+	<script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/shoutcast_data.min.js"></script>
+	<script>
+	$(document).ready(function(){
+        mejs.i18n.language('pl');
+		$('audio,video').mediaelementplayer({
+          features: ['playpause', 'current', 'progress', 'volume'],
+		  startVolume: 0.3
+        });
+      });
+	  var mejsL10n = {
+		"language":"pl",
+		"strings":{
+		"mejs.live-broadcast": "Witaj na Mafi Gryzonia"
+		}
+	  };		    	
+      var shoutcastIp = 's1.swiatxat.pl';
+      var shoutcastPort = 7000;
+      var shoutcastRefresh = 10;
+      var shoutcastWhat = ['dj', 'title', 'song', 'listeners'];
+    </script>
+	<style>
+      html, body {margin: 0; padding: 0;}
+	  a {text-decoration: none;}
+	  .mejs__container {background-color: #062fa7d9;}
+	</style>
+    </head>
+ <body>
+<center>
+	  <table cellspacing="0" cellpadding="0" background="img/4.png" width="450" height="183" border="0">
+          <tr>
+             <td>
+				<div style="border-radius: 50%;margin-left: 38px; margin-top: -27px; position: absolute;background-image: linear-gradient(to bottom, #000 0%, #062fa7d9 100%);width: 112px;height: 112px;opacity: 0.7;">
+                   <iframe style="border-radius: 50%;border: 5px;margin-left: 6px;margin-top: 6px;background:#000;" src="https://panelradiowy.mafiagryzonia.pl.panelradiowy.pl/embed.php?script=avatar&size=100" scrolling="no" border="0" marginwidth="0" marginheight="0" frameborder="no" width="100" height="100"></iframe>
+                </div>
+				<nav id="circle-nav-wrapper" class="circle-nav-wrapper">
+				<div class="circle-nav-toggle"><i class="material-icons">apps</i></div>
+				<div class="circle-nav-panel"></div>
+				<ul class="circle-nav-menu">
+				<li class="circle-nav-item circle-nav-item-1"><a href="#" onclick="wyswietl('https://panelradiowy.mafiagryzonia.pl.panelradiowy.pl/embed.php?script=ramowka','ramowka',590,600);"><i class="material-icons">schedule</i><span>Ramówka</a></li>
+				<li class="circle-nav-item circle-nav-item-2"><a href="#" onclick="wyswietl('https://panelradiowy.mafiagryzonia.pl.panelradiowy.pl/embed.php?script=pozdrowienia','pozdro',300,250);"><i class="material-icons">textsms</i><span>Pozdrowienia</span></a></li>
+				<li class="circle-nav-item circle-nav-item-3"><a href="#" onclick="wyswietl('https://panelradiowy.mafiagryzonia.pl.panelradiowy.pl/embed.php?script=ekipa','pozdro',510,500);"><i class="material-icons">people</i><span>Ekipa</span></a></li>
+				<li class="circle-nav-item circle-nav-item-4"><a href="#" onclick="wyswietl('https://panelradiowy.mafiagryzonia.pl.panelradiowy.pl/embed.php?script=lista','pozdro',583,610);"><i class="material-icons">playlist_add</i><span>Lista przebojów</span></a></li>
+				</ul>
+				</nav>
+				<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+				<script src="js/scripts.min.js"></script>
+                <div style="font-family: Arial; color: #fff; text-shadow: 1px 0px 0px #999999; font-size: 14px; margin-left: 260px; margin-top: -30px; position: absolute;">
+                   <marquee behavior="alternate" scrollamount="2" scrolldelay="2" width="180" direction="left"><b><span id="widget_dj"></span></b></marquee>
+                </div>
+                <div style="font-family: Arial; color: #fff; text-shadow: 1px 0px 0px #999999; font-size: 14px; margin-left: 260px; margin-top: 14px; position: absolute;">
+                   <marquee scrollamount="2" scrolldelay="2" width="180" direction="left"><b><span id="widget_title"></span></b></marquee>
+                </div>
+				<div style="font-family: Arial; color: #fff; text-shadow: 1px 0px 0px #999999; font-size: 14px; margin-left: 260px; margin-top:59px; position: absolute;">
+                   <marquee scrollamount="2" scrolldelay="2" width="180" direction="left"><b><span id="widget_song"></span></b></marquee>
+                </div>
+				<div style="font-family: Arial; color: #fff; text-shadow: 1px 0px 0px #999999; font-size: 19px; margin-left: 28px; margin-top: -65px; position: absolute;text-shadow: 1px 1px black;">
+                   <b><span id="widget_listeners"></span></b>
+                </div>
+             </td>
+          </tr>
+       </table>
+	   <audio style="width:450px;" controls autoplay preload="none">
+        <source src="https://s1.swiatxat.pl:7000/;" type="audio/mpeg">
+      </audio>
+	   <script src="js/mediaelement-and-player.min.js"></script>
+		<script src="js/mediaelement/lang/pl.js"></script>
+		<script src="js/shoutcastplayer.min.js"></script>
+	</center>  
+ </body>
+</html>
