@@ -1,0 +1,94 @@
+@keyframes opacity{
+    0% { opacity: 1; visibility: visible; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes name-anim{
+    0% { opacity: 0; width: 0; height: 0; }
+    50% { width: 600px; height: 600px; }
+    100% { opacity: 1; }
+}
+
+@keyframes name-topborder-anim{
+    0% { width: 0%; }
+    50% { width: 100%; }
+    100% { width: 0%; }
+}
+
+@keyframes name-bottomborder-anim{
+    0% { width: 100%; }
+    50% { width: 0%; }
+    100% { width: 100%; }
+}
+
+@keyframes clockwiseRotation-anim{
+    0% { transform: rotate(0) }
+    100% { transform: rotate(360deg) }
+}
+
+@keyframes anticlockwiseRotation-anim{
+    0% { transform: rotate(0) }
+    100% { transform: rotate(-360deg) }
+}
+
+@keyframes ring01-animation{
+    0% { opacity: 0; scale: 0; }
+    50% { scale: 1.25; }
+    100% { opacity: 1; }
+}
+
+#screen-cover{
+    animation: opacity;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+#name{
+    animation: name-anim;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+#name div:first-child{
+    animation: name-topborder-anim 4s linear infinite;
+}
+
+#name div:last-child{
+    animation: name-bottomborder-anim 4s linear infinite;
+}
+
+#name-rings{
+    animation: opactiy-anim;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.ring01-parent{
+    animation: ring01-animation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+}
+
+.ring02-parent{
+    animation: ring01-animation;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+
+.ring03-parent{
+    animation: ring01-animation;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-out;
+}
+
+.first-ring{
+    animation: clockwiseRotation-anim 30s linear infinite;
+}
+
+.second-ring{
+    animation: anticlockwiseRotation-anim 60s linear infinite;
+}
+
+.third-ring{
+    animation: clockwiseRotation-anim 90s linear infinite;
+}
